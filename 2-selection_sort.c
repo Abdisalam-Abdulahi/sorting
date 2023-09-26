@@ -25,6 +25,8 @@ void selection_sort(int *array, size_t size)
 				position = j;
 			}
 		}
+		if (array[i] == small)
+			break;
 		if (position != i)
 		{
 			temp = array[i];
@@ -33,7 +35,5 @@ void selection_sort(int *array, size_t size)
 			print_array(array, size);
 		}
 		i++;
-		if (array[i] == small)
-			break;
 	}
 }
