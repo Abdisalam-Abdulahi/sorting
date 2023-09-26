@@ -10,7 +10,7 @@ void selection_sort(int *array, size_t size)
 {
 	size_t i = 0;
 	size_t j;
-	int position;
+	size_t position;
 	int temp;
 	int small;
 
@@ -25,11 +25,13 @@ void selection_sort(int *array, size_t size)
 				position = j;
 			}
 		}
-
-		temp = array[i];
-		array[i] = small;
-		array[position] = temp;
-		print_array(array, size);
+		if (position != i)
+		{
+			temp = array[i];
+			array[i] = small;
+			array[position] = temp;
+			print_array(array, size);
+		}
 		i++;
 	}
 }
